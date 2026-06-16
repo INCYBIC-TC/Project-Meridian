@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mern-server:
+    build: ./mern-server
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/meridian
+      - JWT_SECRET=your_jwt_secret
+    depends_on:
+      - mongodb
+
+  fastapi-parser:
+    build: ./fastapi-parser
+    ports:
+      - "8000:8000"
+
+  flask-webhook:
+    build: ./flask-webhook
+    ports:
+      - "8001:8001"
+
+  security-scanner:
+    build: ./security-scanner
+    ports:
+      - "8002:8002"
+
+  ai-agents:
+    build: ./ai-agents
+    ports:
+      - "8003:8003"
+    environment:
+      - OPENAI_API_KEY=your_openai_key
+
+  mongodb:
+    image: mongo:7
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
