@@ -1,0 +1,169 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.dashboard-subtitle {
+  color: hsl(var(--text-secondary));
+  font-size: 1rem;
+}
+
+/* Metric Stats Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metric-label {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: hsl(var(--text-secondary));
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Scan History Table */
+.history-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.table th {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: hsl(var(--text-secondary));
+  letter-spacing: 0.05em;
+  padding: 16px;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.table td {
+  padding: 16px;
+  border-bottom: 1px solid hsl(var(--border) / 0.5);
+  color: hsl(var(--text-secondary));
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background: hsl(var(--bg-card-hover) / 0.3);
+}
+
+.table tbody tr td:first-child {
+  color: hsl(var(--text-primary));
+  font-weight: 500;
+}
+
+/* Status Badge styling */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-family: var(--font-heading);
+}
+
+.badge-pending {
+  background: var(--warning-glow);
+  color: hsl(var(--warning));
+  border: 1px solid hsl(var(--warning) / 0.3);
+}
+
+.badge-completed {
+  background: var(--success-glow);
+  color: hsl(var(--success));
+  border: 1px solid hsl(var(--success) / 0.3);
+}
+
+.badge-failed {
+  background: var(--error-glow);
+  color: hsl(var(--error));
+  border: 1px solid hsl(var(--error) / 0.3);
+}
+
+.badge-scanning, .badge-parsing, .badge-analyzing {
+  background: var(--primary-glow);
+  color: hsl(var(--primary-hover));
+  border: 1px solid hsl(var(--primary) / 0.3);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Action button in table */
+.btn-table-action {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: hsl(var(--primary-hover));
+  transition: color 0.2s ease;
+}
+
+.btn-table-action:hover {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: hsl(var(--text-muted));
+  font-size: 1rem;
+}
